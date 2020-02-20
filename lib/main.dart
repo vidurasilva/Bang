@@ -88,14 +88,26 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.display1,
             ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
+            Row(
+              children:<Widget>[
+                FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ), 
+      FloatingActionButton(
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: Icon(Icons.minimize),
+      ), 
+              ]
+            )
+            
+          ],
+        ),
+      ),
+      
+      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
