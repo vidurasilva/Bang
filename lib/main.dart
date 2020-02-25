@@ -45,7 +45,9 @@ class _MyHomePageState extends State<MyHomePage> {
       // called again, and so nothing would appear to happen.
       _counter++;
     });
-  }void _decrementCounter() {
+  }
+
+  void _decrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
@@ -97,25 +99,26 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.display1,
             ),
-            Row(
-              children:<Widget>[
-                FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), 
-      FloatingActionButton(
-        onPressed: _decrementCounter,
-        tooltip: 'Decrement',
-        child: Icon(Icons.minimize),
-      ), 
-              ]
-            )
-            
+            Row(children: <Widget>[
+              Expanded(
+                child: FloatingActionButton(
+                  onPressed: _incrementCounter,
+                  tooltip: 'Increment',
+                  child: Icon(Icons.add),
+                ),
+              ),
+              Expanded(
+                child: FloatingActionButton(
+                  onPressed: _decrementCounter,
+                  tooltip: 'Decrement',
+                  child: Icon(Icons.remove),
+                ),
+              ),
+            ])
           ],
         ),
       ),
-      
+
       // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
