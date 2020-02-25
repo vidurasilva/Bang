@@ -107,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Icon(Icons.add),
                 ),
               ),
-              Expanded(
+              Center(
                 child: FloatingActionButton(
                   onPressed: _decrementCounter,
                   tooltip: 'Decrement',
