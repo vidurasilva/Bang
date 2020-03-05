@@ -111,26 +111,26 @@ class _MyHomePageState extends State<MyHomePage> {
                 // ),
               ],
             ),
-            // Row(children: <Widget>[
-            //   Expanded(
-            //     child: ListTile(
-            //       leading: Icon(Icons.map),
-            //       title: Text('Map'),
-            //     ),
-            //   ),
-            //   Expanded(
-            //     child: ListTile(
-            //       leading: Icon(Icons.photo_album),
-            //       title: Text('Album'),
-            //     ),
-            //   ),
-            //   Expanded(
-            //     child: ListTile(
-            //       leading: Icon(Icons.phone),
-            //       title: Text('Phone'),
-            //     ),
-            //   ),
-            // ]),
+            Row(children: <Widget>[
+              Expanded(
+                child: ListTile(
+                  leading: Icon(Icons.map),
+                  title: Text('Map'),
+                ),
+              ),
+              Expanded(
+                child: ListTile(
+                  leading: Icon(Icons.photo_album),
+                  title: Text('Album'),
+                ),
+              ),
+              Expanded(
+                child: ListTile(
+                  leading: Icon(Icons.phone),
+                  title: Text('Phone'),
+                ),
+              ),
+            ]),
           ],
         ),
       ),
