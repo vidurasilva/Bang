@@ -74,41 +74,63 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.display1,
             ),
-            Image.network(
-              'https://github.com/flutter/plugins/raw/master/packages/video_player/doc/demo_ipod.gif?raw=true',
-            ),
-            Row(children: <Widget>[
-              Expanded(
-                child: FloatingActionButton(
-                  onPressed: _incrementCounter,
-                  tooltip: 'Increment',
-                  child: Icon(Icons.add),
-                ),
-              ),
-              Expanded(
-                child: FloatingActionButton(
-                  onPressed: _decrementCounter,
-                  tooltip: 'Decrement',
-                  child: Icon(Icons.remove),
-                ),
-              ),
-            ]),
-            ListView(
+            // Image.network(
+            //   'https://github.com/flutter/plugins/raw/master/packages/video_player/doc/demo_ipod.gif?raw=true',
+            // ),
+            Row(
               children: <Widget>[
-                ListTile(
-                  leading: Icon(Icons.map),
-                  title: Text('Map'),
+                Expanded(
+                  child: FloatingActionButton(
+                    onPressed: _incrementCounter,
+                    tooltip: 'Increment',
+                    child: Icon(Icons.add),
+                  ),
                 ),
-                ListTile(
-                  leading: Icon(Icons.photo_album),
-                  title: Text('Album'),
+                Expanded(
+                  child: FloatingActionButton(
+                    onPressed: _decrementCounter,
+                    tooltip: 'Decrement',
+                    child: Icon(Icons.remove),
+                  ),
                 ),
-                ListTile(
-                  leading: Icon(Icons.phone),
-                  title: Text('Phone'),
-                ),
+                // Expanded(
+                //   child: ListView(children: <Widget>[
+                //     ListTile(
+                //       leading: Icon(Icons.map),
+                //       title: Text('Map'),
+                //     ),
+                //     ListTile(
+                //       leading: Icon(Icons.photo_album),
+                //       title: Text('Album'),
+                //     ),
+                //     ListTile(
+                //       leading: Icon(Icons.phone),
+                //       title: Text('Phone'),
+                //     ),
+                //   ]),
+                // ),
               ],
             ),
+            // Row(children: <Widget>[
+            //   Expanded(
+            //     child: ListTile(
+            //       leading: Icon(Icons.map),
+            //       title: Text('Map'),
+            //     ),
+            //   ),
+            //   Expanded(
+            //     child: ListTile(
+            //       leading: Icon(Icons.photo_album),
+            //       title: Text('Album'),
+            //     ),
+            //   ),
+            //   Expanded(
+            //     child: ListTile(
+            //       leading: Icon(Icons.phone),
+            //       title: Text('Phone'),
+            //     ),
+            //   ),
+            // ]),
           ],
         ),
       ),
