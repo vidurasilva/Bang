@@ -127,7 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Expanded(
                 child: ListTile(
                   leading: Icon(Icons.phone),
-                  title: Text('Phone for umber'),
+                  title: Text('Phone for number'),
                 ),
               ),
             ]),
