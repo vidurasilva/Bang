@@ -8,6 +8,6 @@ class AuthEvent extends StatefulWidget {
 class _AuthEventState extends State<AuthEvent> {
   @override
   Widget build(BuildContext context) {
-    return Scaforf();
+    return Scaffold();
   }
 }
