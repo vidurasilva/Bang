@@ -1,13 +1,39 @@
-import 'package:flutter/material.dart';
+import 'package:equatable/equatable.dart';
 
-class AuthState extends StatefulWidget {
+abstract class AuthenticationState extends Equatable {
   @override
-  _AuthStateState createState() => _AuthStateState();
+  List<Object> get props => [];
 }
 
-class _AuthStateState extends State<AuthState> {
+class AuthenticationUninitialized extends AuthenticationState {}
+
+class AuthenticationAuthenticated extends AuthenticationState {
+  final String token;
+  final user;
+  AuthenticationAuthenticated(this.token, this.user);
   @override
-  Widget build(BuildContext context) {
-    return Scaffold();
-  }
+  List<Object> get props => [token, user];
+  @override
+  String toString() => '{ "token":"$token" ,"userme": "$user" }';
+}
+
+class AuthenticationUnauthenticated extends AuthenticationState {}
+
+class AuthenticationLoading extends AuthenticationState {}
+
+class AuthenticationRegister extends AuthenticationState {}
+
+class AuthenticationLogin extends AuthenticationState {}
+
+class AuthenticationCart extends AuthenticationState {}
+
+class AuthenticationAccessPrivileges extends AuthenticationState {}
+
+class AuthenticationCodeForLogin extends AuthenticationState {
+  final String token;
+  AuthenticationCodeForLogin(this.token);
+  @override
+  List<Object> get props => [token];
+  @override
+  String toString() => '{ "token":"$token"}';
 }
