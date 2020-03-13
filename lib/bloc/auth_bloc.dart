@@ -1,13 +1,17 @@
-import 'package:flutter/material.dart';
+import 'dart:async';
+import 'package:bloc/bloc.dart';
+import 'package:thousand_bits/bloc/auth_event.dart';
+import 'package:thousand_bits/bloc/auth_state.dart';
 
-class AuthBloc extends StatefulWidget {
-  @override
-  _AuthBlocState createState() => _AuthBlocState();
-}
+class AuthenticationBloc
+    extends Bloc<AuthenticationEvent, AuthenticationState> {
+  AuthenticationBloc();
 
-class _AuthBlocState extends State<AuthBloc> {
   @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
+  AuthenticationState get initialState => AuthenticationUninitialized();
+
+  @override
+  Stream<AuthenticationState> mapEventToState(
+    AuthenticationEvent event,
+  ) async* {}
 }
