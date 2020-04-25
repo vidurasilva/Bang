@@ -11,6 +11,9 @@ class ProductPage extends StatefulWidget {
 class _ProductState extends State<ProductPage> {
   @override
   Widget build(BuildContext context) {
-    return null;
+    return new WillPopScope(
+      onWillPop: () async => false,
+      child: Scaffold(),
+    );
   }
 }
