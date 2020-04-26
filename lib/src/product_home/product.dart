@@ -13,7 +13,11 @@ class _ProductState extends State<ProductPage> {
   Widget build(BuildContext context) {
     return new WillPopScope(
       onWillPop: () async => false,
-      child: Scaffold(),
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('App vidura bar'),
+        ),
+      ),
     );
   }
 }
