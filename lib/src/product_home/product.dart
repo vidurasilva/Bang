@@ -17,7 +17,10 @@ class _ProductState extends State<ProductPage> {
         appBar: AppBar(
           title: Text('App vidura bar'),
         ),
-        body: SafeArea(child: Scaffold()),
+        body: SafeArea(
+            child: Scaffold(
+          backgroundColor: Colors.black,
+        )),
       ),
     );
   }
