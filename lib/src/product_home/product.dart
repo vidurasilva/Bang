@@ -20,6 +20,7 @@ class _ProductState extends State<ProductPage> {
         body: SafeArea(
             child: Scaffold(
           backgroundColor: Colors.black,
+          body: Container(),
         )),
       ),
     );
