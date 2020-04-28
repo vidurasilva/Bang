@@ -21,7 +21,14 @@ class _ProductState extends State<ProductPage> {
             child: Scaffold(
           backgroundColor: Colors.black,
           body: Container(
-            child: Row(),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+          Expanded(
+            child: Column(children: [
+              Container(height: 120.0, color: Colors.yellow),
+              Container(height: 100.0, color: Colors.cyan),
+            ]
+            ),
           ),
         )),
       ),
