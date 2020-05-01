@@ -45,7 +45,7 @@ class GenerationModal extends StatelessWidget {
                   crossAxisCount: 2,
                   childAspectRatio: 1.55,
                   crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
+                  mainAxisSpacing: 20,
                 ),
                 itemCount: generations.length,
                 itemBuilder: (context, index) =>
