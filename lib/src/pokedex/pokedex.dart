@@ -72,8 +72,8 @@ class _PokedexState extends State<Pokedex> with SingleTickerProviderStateMixin {
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     childAspectRatio: 1.4,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
+                    crossAxisSpacing: 20,
+                    mainAxisSpacing: 20,
                   ),
                   padding: EdgeInsets.only(left: 28, right: 28, bottom: 58),
                   itemCount: pokemons.length,
