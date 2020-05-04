@@ -3,8 +3,14 @@ import 'package:thousand_bits/models/pokemon.dart';
 
 const List<Pokemon> pokemons = [
   Pokemon(
-    name: "Bulbasaursss",
+    name: "Bulbasaur",
     types: const ["grass", "poison"],
+    image: "assets/images/bulbasaur.png",
+    color: AppColors.lightTeal,
+  ),
+  Pokemon(
+    name: "Bulbasaur",
+    types: const ["poison", "grass"],
     image: "assets/images/bulbasaur.png",
     color: AppColors.lightTeal,
   ),
