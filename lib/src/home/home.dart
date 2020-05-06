@@ -56,12 +56,12 @@ class _HomeState extends State<Home> {
         borderRadius: BorderRadius.vertical(bottom: Radius.circular(30)),
       ),
       children: <Widget>[
-        SizedBox(height: 117),
+        SizedBox(height: 50),
         Padding(
-            padding: EdgeInsets.symmetric(horizontal: 38),
+            padding: EdgeInsets.symmetric(horizontal: 48),
             child: Image(
-              image: AssetImage("assets/images/thumbnail.png"),
-              height: 55,
+              image: AssetImage("assets/images/freebies.png"),
+              height: 128,
             )
             // Text(
             //   "What Pokemon\nare you looking for?",
@@ -72,9 +72,9 @@ class _HomeState extends State<Home> {
             //   ),
             // ),
             ),
-        SizedBox(height: 40),
+        //SizedBox(height: 40),
         // SearchBar(),
-        SizedBox(height: 42),
+        //SizedBox(height: 42),
         CategoryList(),
       ],
     );
@@ -140,7 +140,7 @@ class _HomeState extends State<Home> {
               centerTitle: true,
               title: _showTitle
                   ? Text(
-                      "Pokedext",
+                      "Pokedexte",
                       style: TextStyle(fontWeight: FontWeight.bold),
                     )
                   : null,
