@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:thousand_bits/data/pokemons.dart';
 import 'package:thousand_bits/src/pokedex/widgets/generation_modal.dart';
 import 'package:thousand_bits/src/pokedex/widgets/search_modal.dart';
+import 'package:thousand_bits/src/product_home/widgets/singal_producr.dart';
 import 'package:thousand_bits/widgets/fab.dart';
 import 'package:thousand_bits/widgets/poke_container.dart';
 import 'package:thousand_bits/widgets/pokemon_card.dart';
@@ -58,7 +59,7 @@ class _PokedexState extends State<Pokedex> with SingleTickerProviderStateMixin {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 26.0),
                 child: Text(
-                  "Pokedex",
+                  "Pokedexttttt",
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
@@ -77,14 +78,30 @@ class _PokedexState extends State<Pokedex> with SingleTickerProviderStateMixin {
                   ),
                   padding: EdgeInsets.only(left: 28, right: 28, bottom: 58),
                   itemCount: pokemons.length,
-                  itemBuilder: (context, index) => PokemonCard(
-                    pokemons[index],
-                    index: index,
-                    onPress: () {
-                      print(index);
-                      Navigator.of(context).pushNamed("/pokemon-info");
-                    },
-                  ),
+                  itemBuilder: (context, index) {
+                    return SingleProduct(
+                      productId: '122',
+                      productName: pokemons[index].name,
+                      productPicture: pokemons[index].image,
+                      productPrice: '123456',
+                      categoreName: pokemons[index].name,
+                      inCart: true,
+                      inLevel: true,
+                      cartItemQuentity: '1',
+                      attributes: null,
+                      defaultAttributr: null,
+                      description: 'Best',
+                    );
+                  },
+                  // => PokemonCard(
+                  //   pokemons[index],
+                  //   index: index,
+                  //   onPress: () {
+                  //     print(index);
+                  //     print(pokemons.length);
+                  //     Navigator.of(context).pushNamed("/pokemon-info");
+                  //   },
+                  // ),
                 ),
               ),
             ],
