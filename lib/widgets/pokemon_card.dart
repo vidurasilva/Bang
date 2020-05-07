@@ -26,18 +26,18 @@ class PokemonCard extends StatelessWidget {
   final Function onPress;
   final Pokemon pokemon;
 
-  List<Widget> _buildTypes() {
-    final widgetTypes = pokemon.types
-        .map(
-          (type) => Hero(
-            tag: pokemon.name + type,
-            child: PokemonType(capitalizeFirstChar(type)),
-          ),
-        )
-        .expand((item) => [item, SizedBox(height: 6)]);
+  // List<Widget> _buildTypes() {
+  //   final widgetTypes = pokemon.types
+  //       .map(
+  //         (type) => Hero(
+  //           tag: pokemon.name + type,
+  //           child: PokemonType(capitalizeFirstChar(type)),
+  //         ),
+  //       )
+  //       .expand((item) => [item, SizedBox(height: 6)]);
 
-    return widgetTypes.take(widgetTypes.length - 1).toList();
-  }
+  //   return widgetTypes.take(widgetTypes.length - 1).toList();
+  // }
 
   Widget _buildCardContent() {
     return Align(
@@ -63,7 +63,7 @@ class PokemonCard extends StatelessWidget {
               ),
             ),
             SizedBox(height: 10),
-            ..._buildTypes(),
+            //..._buildTypes(),
           ],
         ),
       ),
