@@ -83,8 +83,9 @@ class _SingleProductState extends State<SingleProduct> {
               Stack(
                 children: <Widget>[
                   Container(
-                      child: Image.network(
-                    widget.productPicture[0].src,
+                      child: Image.asset(
+                    widget.productPicture,
+                    //image url set
                     fit: BoxFit.fill,
                   )),
                   // child: Image.network(productPicture.images[0].src,
