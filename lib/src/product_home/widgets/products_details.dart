@@ -194,8 +194,8 @@ class _ProductDetailsState extends State<ProductDetails> {
         child: Column(
           children: <Widget>[
             Expanded(
-              child: Image.network(
-                widget.productDetailsPicture[imageValue].src,
+              child: Image.asset(
+                widget.productDetailsPicture,
                 fit: BoxFit.fitWidth,
                 // width: MediaQuery.of(context).size.width * 1,
               ),
