@@ -59,7 +59,7 @@ class _ProductDetailsState extends State<ProductDetails> {
   void initState() {
     super.initState();
     carti = widget.productDetailsCartItemQuentity;
-    defaultAttribute = widget.productDetailsDefaultAttr[0]["option"];
+    defaultAttribute = widget.productDetailsDefaultAttr;
     print(defaultAttribute[0]);
     detailesAttributes = widget.productDetailsAttributes;
     if (detailesAttributes.length > 0) {
@@ -252,7 +252,7 @@ class _ProductDetailsState extends State<ProductDetails> {
               decoration: BoxDecoration(
                   border: Border.all(color: Colors.white, width: 1)),
               child: Image.network(
-                widget.productDetailsPicture[2].src,
+                widget.productDetailsPicture,
                 fit: BoxFit.fill,
 
                 // width: MediaQuery.of(context).size.width - 20,
@@ -277,7 +277,7 @@ class _ProductDetailsState extends State<ProductDetails> {
               decoration: BoxDecoration(
                   border: Border.all(color: Colors.white, width: 1)),
               child: Image.network(
-                widget.productDetailsPicture[3].src,
+                widget.productDetailsPicture,
                 fit: BoxFit.fill,
                 // width: MediaQuery.of(context).size.width - 20,
               ),
