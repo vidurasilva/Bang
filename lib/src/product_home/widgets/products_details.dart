@@ -555,7 +555,7 @@ class _ProductDetailsState extends State<ProductDetails> {
         RichText(
           textAlign: TextAlign.center,
           text: TextSpan(
-              text: "${widget.productDetailsPrice} USD",
+              text: "${widget.productDetailsPrice} LKR",
               style: TextStyle(
                   color: Colors.white, fontFamily: 'Lato', fontSize: 18.0)),
         ),
