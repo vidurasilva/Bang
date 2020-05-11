@@ -351,7 +351,7 @@ class _ProductDetailsState extends State<ProductDetails> {
               children: <Widget>[
                 Expanded(
                   child: Text(
-                    "\$${widget.productDetailsOldPrice}",
+                    "\$${widget.productDetailsPrice}",
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                     style: TextStyle(
@@ -361,7 +361,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                   ),
                 ),
                 Expanded(
-                  child: Text("\$${widget.productDetailsNewPrice}",
+                  child: Text("\$${widget.productDetailsPrice}",
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
                       style: TextStyle(
