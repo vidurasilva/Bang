@@ -40,7 +40,7 @@ class _ProductDetailsState extends State<ProductDetails> {
   List attributesName = new List();
   List attributesOption = new List();
   List detailesAttributes = new List();
-  var defaultAttribute;
+  // var defaultAttribute;
 
   void onTabTapped(int index, int quantitys) {
     setState(() {
@@ -59,8 +59,8 @@ class _ProductDetailsState extends State<ProductDetails> {
   void initState() {
     super.initState();
     carti = widget.productDetailsCartItemQuentity;
-    defaultAttribute = widget.productDetailsDefaultAttr;
-    print(defaultAttribute[0]);
+    //defaultAttribute = widget.productDetailsDefaultAttr;
+    //print(defaultAttribute[0]);
     detailesAttributes = widget.productDetailsAttributes;
     if (detailesAttributes.length > 0) {
       for (var i = 0; i < detailesAttributes.length; i++) {
