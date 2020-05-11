@@ -40,7 +40,7 @@ class _ProductDetailsState extends State<ProductDetails> {
   List attributesName = new List();
   List attributesOption = new List();
   List detailesAttributes = new List();
-  // var defaultAttribute;
+  var defaultAttribute = [1, 2, 3, 4];
 
   void onTabTapped(int index, int quantitys) {
     setState(() {
@@ -61,126 +61,43 @@ class _ProductDetailsState extends State<ProductDetails> {
     carti = widget.productDetailsCartItemQuentity;
     //defaultAttribute = widget.productDetailsDefaultAttr;
     //print(defaultAttribute[0]);
-    detailesAttributes = widget.productDetailsAttributes;
-    if (detailesAttributes.length > 0) {
-      for (var i = 0; i < detailesAttributes.length; i++) {
-        var vvv = detailesAttributes[i];
-        sellectedAttributes.add(0);
-        var attrName = vvv["name"];
-        var attriOption = vvv["options"];
-        if (attrName != 'point') {
-          attributesName.add(attrName);
-          attributesOption.add(attriOption);
-        } else {
-          dfaultPointForItem = attriOption[0];
-        }
-      }
-    }
+    detailesAttributes = defaultAttribute;
+    // if (detailesAttributes.length > 0) {
+    //   for (var i = 0; i < detailesAttributes.length; i++) {
+    //     var vvv = detailesAttributes[i];
+    //     sellectedAttributes.add(0);
+    //     var attrName = vvv["name"];
+    //     var attriOption = vvv["options"];
+    //     if (attrName != 'point') {
+    //       attributesName.add(attrName);
+    //       attributesOption.add(attriOption);
+    //     } else {
+    //       dfaultPointForItem = attriOption[0];
+    //     }
+    //   }
+    // }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
       appBar: AppBar(
-        titleSpacing: 0.0,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            // Expanded(
-            //   flex: 3,
-            IconButton(
-              icon: Icon(Icons.arrow_back_ios),
-              onPressed: () {
-                // Navigator.pop(context);
-                // widget.contextHome.add(ProductLoading());
-              }, //add back button function
-            ),
-            // ),
-            Expanded(
-              // flex: 17,
-              child: Center(
-                child: Text(
-                  widget.productDetailsName,
-                  style: TextStyle(fontSize: 20),
-                ),
-              ),
-            )
-          ],
-        ),
-        automaticallyImplyLeading: false,
-        centerTitle: true,
-        actions: <Widget>[
-          Row(
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.all(5),
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: <Widget>[
-                    IconButton(
-                      // icon: Icon(Icons.card_travel),
-                      icon: Icon(
-                        Icons.favorite,
-                        color: Colors.pink,
-                        size: 24.0,
-                      ),
-                      onPressed: () {},
-                    ),
-                    Positioned(
-                      top: 5.0,
-                      right: 5.0,
-                      child: Center(
-                        child: Container(
-                          alignment: Alignment.center,
-                          height: 18,
-                          width: 18,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.green,
-                          ),
-                          child: Text('$carti',
-                              style: TextStyle(
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w800,
-                                  color: Colors.white)),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ],
-          )
-        ],
+        title: Text(widget.productDetailsName),
       ),
-      body: ListView(
+      body: Column(
         children: <Widget>[
-          Container(
+          Expanded(
             child: buildCard(),
-            height: 240,
+            flex: 5,
           ),
-          Container(
-            // padding: EdgeInsets.symmetric(vertical: 10),
-            child: buildGalary(),
-            height: 110,
-          ),
-
-          // ResponsiveContainer
-          Container(
-            // heightPercent: 50,
-            // widthPercent: 50,
-            child: buildDescription(),
-            // height: 250,
-          ),
-          Container(
+          Expanded(
             child: buildChoice(),
-            height: 235,
           ),
-          Container(
-            child: buildAddToRow(context),
-            height: 60,
+          Expanded(
+            child: buildDescription(),
+          ),
+          Expanded(
+            child: buildAddToRow(),
           ),
         ],
       ),
@@ -189,268 +106,139 @@ class _ProductDetailsState extends State<ProductDetails> {
 
   Widget buildCard() {
     return Card(
+      elevation: 10,
+      margin: EdgeInsets.fromLTRB(40, 20, 40, 20),
       child: Container(
-        color: Colors.black,
+        decoration: BoxDecoration(
+          color: Color(0xffdddddd),
+        ),
+//        width: MediaQuery.of(context).size.width -50,
+//        height: MediaQuery.of(context).size.height / 3,
         child: Column(
           children: <Widget>[
             Expanded(
-              child: Image.asset(
-                widget.productDetailsPicture,
-                fit: BoxFit.fitWidth,
-                // width: MediaQuery.of(context).size.width * 1,
+              child: Container(
+                child: Image.asset(
+                  widget.productDetailsPicture,
+                  fit: BoxFit.fill,
+                  width: MediaQuery.of(context).size.width - 80,
+                ),
+                padding: EdgeInsets.all(20),
               ),
               flex: 6,
             ),
+            Expanded(
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          child: Text("\$${widget.productDetailsPrice}",
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 1,
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w800,
+                                  color: Colors.white)),
+                          padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
+                          margin: EdgeInsets.only(top: 5),
+                          decoration: BoxDecoration(
+                              color: Color(0xff36004f),
+                              borderRadius: BorderRadius.circular(15)),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.only(top: 5),
+                          child: Row(
+                            children: <Widget>[
+                              Icon(
+                                Icons.star,
+                                color: Colors.pink,
+                              ),
+                              Icon(
+                                Icons.star,
+                                color: Colors.pink,
+                              ),
+                              Icon(
+                                Icons.star,
+                                color: Colors.pink,
+                              ),
+                              Icon(
+                                Icons.star_half,
+                                color: Colors.pink,
+                              ),
+                              Icon(
+                                Icons.star_border,
+                                color: Colors.pink,
+                              )
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              flex: 1,
+            )
           ],
         ),
       ),
-    );
-  }
-
-  Widget buildGalary() {
-    return new Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        GestureDetector(
-          onTap: () {
-            setState(
-              () {
-                imageValue = 1;
-              },
-            );
-          },
-          child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Container(
-              height: 90,
-              width: 90,
-              decoration: BoxDecoration(
-                  border: Border.all(color: Colors.white, width: 1)),
-              child: Image.network(
-                widget.productDetailsPicture[1].src,
-                fit: BoxFit.fill,
-                // width: MediaQuery.of(context).size.width - 20,
-              ),
-              // padding: EdgeInsets.all(20),
-            ),
-          ),
-        ),
-        GestureDetector(
-          onTap: () {
-            setState(
-              () {
-                imageValue = 2;
-              },
-            );
-          },
-          child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Container(
-              height: 90,
-              width: 90,
-              // padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                  border: Border.all(color: Colors.white, width: 1)),
-              child: Image.network(
-                widget.productDetailsPicture,
-                fit: BoxFit.fill,
-
-                // width: MediaQuery.of(context).size.width - 20,
-              ),
-              // padding: EdgeInsets.all(20),
-            ),
-          ),
-        ),
-        GestureDetector(
-          onTap: () {
-            setState(
-              () {
-                imageValue = 3;
-              },
-            );
-          },
-          child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Container(
-              height: 90,
-              width: 90,
-              decoration: BoxDecoration(
-                  border: Border.all(color: Colors.white, width: 1)),
-              child: Image.network(
-                widget.productDetailsPicture,
-                fit: BoxFit.fill,
-                // width: MediaQuery.of(context).size.width - 20,
-              ),
-              // padding: EdgeInsets.all(20),
-            ),
-          ),
-        ),
-      ],
     );
   }
 
   Widget buildChoice() {
     // TODO: change color to a drop down menu
-    return Column(
+    return Row(
       children: <Widget>[
-        // Expanded(
-        Container(
-          margin: EdgeInsets.symmetric(horizontal: 131.0),
-          child: Divider(
-            color: Colors.white,
-            height: 30,
-            // thickness: 1,
+        Expanded(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              buildColor(Colors.brown, 0),
+              buildColor(Color(0xffba5d5d), 1),
+              buildColor(Color(0xffb78484), 2),
+              buildColor(Color(0xff912121), 3),
+            ],
           ),
         ),
-
-        (attributesName.length != 0)
-            ? builderChoicesLevel(attributesName)
-            : Container(
-                child: Text("This Is Better One"),
+        Expanded(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              IconButton(
+                  icon: Icon(
+                    Icons.add_circle_outline,
+                    color: Colors.grey,
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      quantity++;
+                    });
+                  }),
+              Text(
+                quantity.toString(),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
-
-        Container(
-          margin: EdgeInsets.symmetric(horizontal: 130.0),
-          child: Divider(
-            color: Colors.white,
-            height: 30,
-            // thickness: 1,
+              IconButton(
+                  icon: Icon(
+                    Icons.remove_circle_outline,
+                    color: Colors.grey,
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      quantity = --quantity == 0 ? 1 : quantity;
+                    });
+                  }),
+            ],
           ),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Qty    ',
-              style: TextStyle(fontFamily: 'Lato', fontSize: 16.0),
-            ),
-            IconButton(
-                icon: Icon(
-                  Icons.remove,
-                  color: Colors.white70,
-                ),
-                onPressed: () {
-                  setState(() {
-                    quantity = --quantity == 0 ? 1 : quantity;
-                  });
-                }),
-            Text(
-              quantity.toString(),
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-            ),
-            IconButton(
-                icon: Icon(
-                  Icons.add,
-                  color: Colors.white70,
-                ),
-                onPressed: () {
-                  setState(() {
-                    quantity++;
-                  });
-                }),
-          ],
-        ),
-        // ),
       ],
-    );
-  }
-
-  Widget builderChoicesLevel(productDetailsAttributes) {
-    return new Container(
-      height: 125,
-      child: ListView.builder(
-          shrinkWrap: true,
-          itemCount: 1,
-          scrollDirection: Axis.vertical,
-          padding: const EdgeInsets.symmetric(horizontal: 1),
-          itemBuilder: (BuildContext context, int index) {
-            return new Column(
-              children: <Widget>[
-                for (var i = 0; i < productDetailsAttributes.length; i++)
-                  Column(
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 7.5),
-                        child: Text(
-                          attributesName[i],
-                          style: TextStyle(
-                              fontFamily: 'Lato',
-                              fontSize: 17.0,
-                              color: Colors.white),
-                        ),
-                      ),
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            for (var j = 0; j < attributesOption[i].length; j++)
-                              FlatButton(
-                                child: Text(
-                                  '${attributesOption[i][j]}',
-                                  style: TextStyle(
-                                      fontFamily: 'Lato',
-                                      fontSize: 14.0,
-                                      color: (sellectedAttributes[i] ==
-                                              attributesOption[i][j])
-                                          ? Colors.red
-                                          : Colors.white),
-                                ),
-                                onPressed: () {
-                                  onTabTappedChoice(i, attributesOption[i][j]);
-                                  widget.productDetailsAttributes[i + 1]
-                                      ['options'] = [attributesOption[i][j]];
-                                },
-                              )
-                          ])
-                    ],
-                  ),
-              ],
-            );
-          }),
-    );
-  }
-
-  Widget buildSize(String sizeName, int i) {
-    int press;
-    setState(() {
-      press = 1;
-    });
-    return InkWell(
-      onTap: () {
-        setState(() {
-          for (int j = 0; j < selectedColor.length; j++) {
-            selectedColor[j] = false;
-            if (j == i) selectedColor[j] = true;
-          }
-        });
-      },
-      child: Container(
-        // margin: EdgeInsets.only(left: 8),
-        child: Center(
-          child: selectedColor[i]
-              ? FlatButton(
-                  child: Text(sizeName),
-                  color: (press == 1) ? Colors.red : Colors.red[300],
-                  // highlightColor: Colors.green,
-                  // ),
-                  onPressed: () {
-                    print('press1');
-                    press = 1;
-                    print(press);
-                  },
-                )
-              : FlatButton(
-                  child: Text(
-                    sizeName,
-                  ),
-                  color: (press == 2) ? Colors.red : Colors.yellow[350],
-                  onPressed: () {
-                    print('press2');
-                    press = 2;
-                    print(press);
-                  },
-                ),
-        ),
-      ),
     );
   }
 
@@ -473,117 +261,219 @@ class _ProductDetailsState extends State<ProductDetails> {
                 color: Colors.white,
               )
             : null,
-        decoration: ShapeDecoration(
-            color: color,
-            shape:
-                CircleBorder(side: BorderSide(color: Colors.white, width: 1))),
+        decoration: ShapeDecoration(color: color, shape: CircleBorder()),
         height: 20,
         width: 20,
       ),
     );
   }
 
-  Widget buildAddToRow(BuildContext context) {
+  Widget buildAddToRow() {
     return Container(
       margin: EdgeInsets.only(left: 10),
-      child: Column(
+      child: Row(
         children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(5),
-            child: ButtonTheme(
-              height: 40,
-              minWidth: 340,
-              child: RaisedButton(
-                  color: Colors.white,
-                  textColor: Colors.black,
-                  elevation: 5,
-                  onPressed: (_selectedIndex == 0)
-                      ? () async {
-                          // String token = await getTokenFromPref();
-                          // await addItem(widget.productDetailsId, quantity,
-                          //     widget.productDetailsAttributes, token);
-                          // onTabTapped(1, quantity);
-                          // widget.contextHome.add(ProductLoading());
-                        }
-                      : null,
-                  child: (_selectedIndex == 0)
-                      ? Text('Add to Cart',
-                          style: TextStyle(
-                              fontFamily: 'Georgia',
-                              fontSize: 14,
-                              fontWeight: FontWeight.w800,
-                              color: (_selectedIndex == 0)
-                                  ? Colors.black
-                                  : Colors.white))
-                      : Text('Already in Cart',
-                          style: TextStyle(
-                              fontFamily: 'Georgia',
-                              fontSize: 14,
-                              fontWeight: FontWeight.w800,
-                              color: (_selectedIndex == 0)
-                                  ? Colors.black
-                                  : Colors.white))),
+          Expanded(
+            child: Container(
+              child: FlatButton(
+                  onPressed: null,
+                  child: Text(
+                    "ADD TO CART",
+                    style: TextStyle(color: Colors.white),
+                  )),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                gradient: LinearGradient(
+                  colors: [Colors.pink, Colors.pinkAccent, Colors.purpleAccent],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+              ),
             ),
+            flex: 3,
+          ),
+          Expanded(
+              child: Container(
+//            margin: EdgeInsets.only(left: 30, right: 20),
+            decoration: ShapeDecoration(
+                shape: CircleBorder(), color: Color(0xffdddddd)),
+            child: Icon(
+              Icons.favorite_border,
+              color: Colors.black,
+            ),
+            padding: EdgeInsets.all(10),
+          ))
+        ],
+      ),
+    );
+  }
+
+//  @override
+//  Widget build(BuildContext context) {
+//    return Scaffold(
+//      appBar: AppBar(
+//        elevation: 0.0,
+//        title: Text("Back to Shopping"),
+//      ),
+//      body: ListView(
+//        children: <Widget>[
+//          buildProduct(),
+//          buildChoicesRow(),
+//          buildBuyRow(),
+//          Divider(),
+//          buildDescription(),
+//          Divider(),
+//        ],
+//      ),
+//    );
+//  }
+
+  // TODO: Change text UI
+  Widget buildProduct() {
+    return Container(
+      height: 200.0,
+      child: GridTile(
+        child: Container(
+          color: Colors.white,
+          child: Image.asset(
+            widget.productDetailsPicture,
+            fit: BoxFit.fitHeight,
+          ),
+        ),
+        footer: Container(
+          color: Colors.white,
+          child: ListTile(
+            leading: Text(widget.productDetailsName,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0)),
+            title: Row(
+              children: <Widget>[
+                Expanded(
+                  child: Text(
+                    "\$${widget.productDetailsOldPrice}",
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                    style: TextStyle(
+                        color: Colors.grey,
+                        fontWeight: FontWeight.w400,
+                        decoration: TextDecoration.lineThrough),
+                  ),
+                ),
+                Expanded(
+                  child: Text("\$${widget.productDetailsNewPrice}",
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
+                      style: TextStyle(
+                          fontWeight: FontWeight.w800, color: Colors.red)),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget buildChoicesRow() {
+    return Container(
+      color: Color(0xffe5e3e3),
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            child: Container(
+              child: buildChoiceButton("Size"),
+              margin: EdgeInsets.all(5),
+            ),
+            flex: 3,
+          ),
+          Expanded(
+              child: Container(
+                child: buildChoiceButton("Color"),
+                margin: EdgeInsets.all(5),
+              ),
+              flex: 3),
+          Expanded(
+            child: Container(
+              child: buildChoiceButton("Quantity"),
+              margin: EdgeInsets.all(5),
+            ),
+            flex: 4,
           ),
         ],
       ),
     );
   }
 
-  Widget buildDescription() {
-    return Column(
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: RichText(
-            textAlign: TextAlign.center,
-            text: TextSpan(
-              text: '${widget.productDetailsName}',
-              style: TextStyle(
-                  color: Colors.white, fontFamily: 'Lato', fontSize: 22.0),
+  Widget buildChoiceButton(String text) {
+    return MaterialButton(
+      color: Colors.white,
+      textColor: Colors.grey,
+      elevation: 0.2,
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            child: Text(
+              text,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
             ),
+            flex: 2,
           ),
-        ),
-        Container(
-          margin: EdgeInsets.symmetric(horizontal: 130.0),
-          child: Divider(
-            color: Colors.white,
-            height: 30,
-            // thickness: 1,
-          ),
-        ),
-        RichText(
-          textAlign: TextAlign.center,
-          text: TextSpan(
-              text: "${widget.productDetailsPrice} LKR",
-              style: TextStyle(
-                  color: Colors.white, fontFamily: 'Lato', fontSize: 18.0)),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: RichText(
-            textAlign: TextAlign.center,
-            text: TextSpan(
-                text: "$dfaultPointForItem points",
-                style: TextStyle(
-                    color: Colors.white70,
-                    fontFamily: 'Lato',
-                    fontSize: 12.0,
-                    fontStyle: FontStyle.italic)),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(25),
-          child: RichText(
-            textAlign: TextAlign.center,
-            text: TextSpan(
-                text: widget.productDetailsDescription.substring(
-                    3, (widget.productDetailsDescription.length) - 5),
-                style: TextStyle(
-                    color: Colors.white, fontFamily: 'Lato', fontSize: 14.0)),
-          ),
-        ),
-      ],
+          Expanded(child: Icon(Icons.arrow_drop_down))
+        ],
+      ),
+      onPressed: () {
+        showDialog(
+            context: context,
+            builder: (context) {
+              return AlertDialog(
+                title: Text(text),
+                content: Text("Choose the $text"),
+                actions: <Widget>[
+                  MaterialButton(
+                    onPressed: () {
+                      Navigator.of(context).pop(context);
+                    },
+                    child: Text("close"),
+                  )
+                ],
+              );
+            });
+      },
+    );
+  }
+
+  Widget buildBuyRow() {
+    return Container(
+      margin: EdgeInsets.only(left: 10),
+      child: Row(
+        children: <Widget>[
+          Expanded(
+              child: MaterialButton(
+                  onPressed: () {},
+                  color: Colors.pink,
+                  textColor: Colors.white,
+                  elevation: 0.2,
+                  child: Text("Buy now"))),
+          IconButton(
+              icon: Icon(Icons.add_shopping_cart),
+              color: Colors.pink,
+              onPressed: () {}),
+          IconButton(
+              icon: Icon(Icons.favorite_border),
+              color: Colors.pink,
+              onPressed: () {})
+        ],
+      ),
+    );
+  }
+
+  Widget buildDescription() {
+    return ListTile(
+      title: Text("${widget.productDetailsName} Details"),
+      subtitle: Text(
+          "A very valuable item that will surly stun anyone who look at it, Give it a try. The sure thing is that you won't regret it."),
     );
   }
 }
