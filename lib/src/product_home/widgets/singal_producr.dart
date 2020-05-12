@@ -56,7 +56,7 @@ class _SingleProductState extends State<SingleProduct> {
               builder: (context) => ProductDetails(
                     productDetailsId: widget.productId,
                     productDetailsName: widget.productName,
-                    productDetailsPicture: 'https://picsum.photos/250?image=9',
+                    productDetailsPicture: widget.productPicture,
                     productDetailsPrice: 1235,
                     productDetailsCategoreName: widget.categoreName,
                     productDetailsCartItemQuentity: 2,
