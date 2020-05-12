@@ -35,12 +35,6 @@ class _ProductDetailsState extends State<ProductDetails> {
   // int _selectedChoiceIndex = 0;
   List sellectedAttributes = new List();
   int carti;
-  String dfaultPointForItem = '0';
-  List<bool> selectedColor = [true, false, false, false];
-  List attributesName = new List();
-  List attributesOption = new List();
-  List detailesAttributes = new List();
-  var defaultAttribute = [1, 2, 3, 4];
 
   void onTabTapped(int index, int quantitys) {
     setState(() {
@@ -61,7 +55,7 @@ class _ProductDetailsState extends State<ProductDetails> {
     carti = widget.productDetailsCartItemQuentity;
     //defaultAttribute = widget.productDetailsDefaultAttr;
     //print(defaultAttribute[0]);
-    detailesAttributes = defaultAttribute;
+    //detailesAttributes = defaultAttribute;
     // if (detailesAttributes.length > 0) {
     //   for (var i = 0; i < detailesAttributes.length; i++) {
     //     var vvv = detailesAttributes[i];
