@@ -92,7 +92,7 @@ class _HomeState extends State<Home> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text(
-                "Pokémon News",
+                "LastBit Reviews",
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w900,
