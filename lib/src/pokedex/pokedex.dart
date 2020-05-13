@@ -59,7 +59,8 @@ class _PokedexState extends State<Pokedex> with SingleTickerProviderStateMixin {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 26.0),
                 child: Text(
-                  "Pokedexttttt",
+                  "Free Bies",
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
