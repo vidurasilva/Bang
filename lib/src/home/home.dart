@@ -92,7 +92,7 @@ class _HomeState extends State<Home> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text(
-                "LastBit Reviews",
+                "Last bit Reviews",
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w900,
@@ -140,7 +140,7 @@ class _HomeState extends State<Home> {
               centerTitle: true,
               title: _showTitle
                   ? Text(
-                      "Pokedexte",
+                      "All bit news",
                       style: TextStyle(fontWeight: FontWeight.bold),
                     )
                   : null,
