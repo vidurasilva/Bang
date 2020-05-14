@@ -50,6 +50,7 @@ class _PokedexState extends State<Pokedex> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.green[300],
       body: Stack(
         children: <Widget>[
           PokeContainer(
@@ -126,6 +127,7 @@ class _PokedexState extends State<Pokedex> with SingleTickerProviderStateMixin {
         ],
       ),
       floatingActionButton: ExpandedAnimationFab(
+        // Colors.green[200],
         items: [
           FabItem(
             "Favourite Pokemon",
@@ -159,6 +161,7 @@ class _PokedexState extends State<Pokedex> with SingleTickerProviderStateMixin {
           ),
         ],
         animation: _animation,
+
         onPress: () {
           if (_controller.isCompleted) {
             _controller.reverse();
