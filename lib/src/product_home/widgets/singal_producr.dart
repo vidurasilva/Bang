@@ -137,7 +137,7 @@ class _SingleProductState extends State<SingleProduct> {
                     child: Container(
                       child: Padding(
                         padding: EdgeInsets.only(left: 15),
-                        child: Text("\$${widget.productPrice}",
+                        child: Text("\R\s ${widget.productPrice}",
                             overflow: TextOverflow.ellipsis,
                             maxLines: 1,
                             softWrap: false,
