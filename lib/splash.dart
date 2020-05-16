@@ -23,7 +23,7 @@ class _splashscreenState extends State<splashscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green[300],
+      backgroundColor: Colors.green[250],
       body: Center(
         child: Text(
           "It open your 1000 hopes, Join with Us",
