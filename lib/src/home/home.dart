@@ -140,7 +140,7 @@ class _HomeState extends State<Home> {
               centerTitle: true,
               title: _showTitle
                   ? Text(
-                      "All bit News a",
+                      "All bit News About Bits",
                       style: TextStyle(fontWeight: FontWeight.bold),
                     )
                   : null,
