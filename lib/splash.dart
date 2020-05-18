@@ -26,7 +26,7 @@ class _splashscreenState extends State<splashscreen> {
       backgroundColor: Colors.green[250],
       body: Center(
         child: Text(
-          "It open your 1000 hopes, Join with Us and bit",
+          "It open your 1000 hopes edit, Join with Us and bit",
           style: TextStyle(
             fontSize: 50.0,
             color: Colors.white,
