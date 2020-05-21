@@ -15,7 +15,7 @@ class _ProductState extends State<ProductPage> {
         onWillPop: () async => false,
         child: Scaffold(
             appBar: AppBar(
-              title: Text('App bar of 1000'),
+              title: Text('App bar of 1000 bit'),
             ),
             body: SafeArea(
               child: Scaffold(
