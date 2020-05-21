@@ -29,7 +29,7 @@ class _ProductState extends State<ProductPage> {
                           Container(height: 120.0, color: Colors.yellow),
                           Container(height: 100.0, color: Colors.cyan),
                           Container(height: 120.0, color: Colors.yellow),
-                          Container(height: 100.0, color: Colors.cyan),
+                          Container(height: 100.0, color: Colors.green),
                         ]),
                       ),
                     ])),
