@@ -162,7 +162,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                 color: Colors.pink,
                               ),
                               Icon(
-                                Icons.star,
+                                Icons.card_giftcard,
                                 color: Colors.pink,
                               ),
                               Icon(
