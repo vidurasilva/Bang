@@ -139,7 +139,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                               maxLines: 1,
                               style: TextStyle(
                                   fontWeight: FontWeight.w800,
-                                  color: Colors.white)),
+                                  color: Colors.yellow)),
                           padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
                           margin: EdgeInsets.only(top: 5),
                           decoration: BoxDecoration(
