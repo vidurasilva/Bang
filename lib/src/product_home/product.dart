@@ -28,7 +28,7 @@ class _ProductState extends State<ProductPage> {
                         child: Column(children: [
                           Container(height: 120.0, color: Colors.yellow),
                           Container(height: 100.0, color: Colors.cyan),
-                          Container(height: 120.0, color: Colors.yellow),
+                          Container(height: 120.0, color: Colors.blue),
                           Container(height: 100.0, color: Colors.green),
                         ]),
                       ),
