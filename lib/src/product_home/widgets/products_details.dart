@@ -156,7 +156,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                           margin: EdgeInsets.only(top: 5),
                           child: Row(
                             children: <Widget>[
-                              Icon(Icons.star, color: Colors.red),
+                              Icon(Icons.star, color: Colors.green),
                               Icon(
                                 Icons.star,
                                 color: Colors.pink,
