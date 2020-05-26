@@ -160,7 +160,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                               Icon(Icons.star, color: Colors.red),
                               Icon(
                                 Icons.card_giftcard,
-                                color: Colors.pink,
+                                color: Colors.blue,
                               ),
                               Icon(
                                 Icons.star_half,
