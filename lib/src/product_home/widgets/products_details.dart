@@ -164,7 +164,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                               ),
                               Icon(
                                 Icons.star_half,
-                                color: Colors.pink,
+                                color: Colors.yellow,
                               ),
                               Icon(
                                 Icons.star_border,
