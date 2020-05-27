@@ -157,7 +157,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                           child: Row(
                             children: <Widget>[
                               Icon(Icons.star, color: Colors.green),
-                              Icon(Icons.star, color: Colors.red),
+                              Icon(Icons.access_alarm, color: Colors.red),
                               Icon(
                                 Icons.card_giftcard,
                                 color: Colors.blue,
