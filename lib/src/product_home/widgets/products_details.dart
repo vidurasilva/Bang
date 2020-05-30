@@ -273,7 +273,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                   onPressed: null,
                   child: Text(
                     "ADD TO CART",
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.grey),
                   )),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
