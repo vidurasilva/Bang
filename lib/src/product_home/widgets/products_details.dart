@@ -278,7 +278,7 @@ class _ProductDetailsState extends State<ProductDetails> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
                 gradient: LinearGradient(
-                  colors: [Colors.blue, Colors.pinkAccent, Colors.purpleAccent],
+                  colors: [Colors.pink, Colors.pinkAccent, Colors.purpleAccent],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
