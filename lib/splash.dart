@@ -29,7 +29,7 @@ class _splashscreenState extends State<splashscreen> {
     //   startAnimation: '1',
     // );
     return Scaffold(
-      backgroundColor: Colors.green[250],
+      backgroundColor: Colors.green[300],
       body: Center(
         child: Text(
           "It open your 1000 hopes, Join with Us and bit",
