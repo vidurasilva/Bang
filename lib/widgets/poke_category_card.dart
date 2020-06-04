@@ -97,7 +97,7 @@ class PokeCategoryCard extends StatelessWidget {
                 child: Stack(
                   children: [
                     _buildCardContent(),
-                    ..._buildDecorations(itemHeight),
+                    //buildDecorations(itemHeight),
                   ],
                 ),
               ),
