@@ -43,22 +43,22 @@ class PokeContainer extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              if (appBar)
-                Padding(
-                  padding: EdgeInsets.only(left: 26, right: 26, top: appBarTop),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      InkWell(
-                        child: Icon(Icons.arrow_back),
-                        onTap: Navigator.of(context).pop,
-                      ),
-                      Icon(Icons.menu),
-                    ],
-                  ),
-                ),
-              if (children != null) ...children,
+              // if (appBar)
+              //   Padding(
+              //     padding: EdgeInsets.only(left: 26, right: 26, top: appBarTop),
+              //     child: Row(
+              //       mainAxisSize: MainAxisSize.max,
+              //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //       children: <Widget>[
+              //         InkWell(
+              //           child: Icon(Icons.arrow_back),
+              //           onTap: Navigator.of(context).pop,
+              //         ),
+              //         Icon(Icons.menu),
+              //       ],
+              //     ),
+              //   ),
+              //if (children != null) children,
             ],
           ),
         ],
