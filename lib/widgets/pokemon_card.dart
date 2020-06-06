@@ -140,7 +140,7 @@ class PokemonCard extends StatelessWidget {
                 child: Stack(
                   children: [
                     _buildCardContent(),
-                    ..._buildDecorations(itemHeight),
+                    // ..._buildDecorations(itemHeight),
                   ],
                 ),
               ),
