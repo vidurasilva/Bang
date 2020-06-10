@@ -87,7 +87,7 @@ class PokeCategoryCard extends StatelessWidget {
               padding: EdgeInsets.all(0),
               color: category.color,
               splashColor: Colors.white10,
-              highlightColor: Colors.white10,
+              highlightColor: Colors.white12,
               elevation: 0,
               highlightElevation: 2,
               disabledColor: category.color,
