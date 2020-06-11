@@ -62,7 +62,7 @@ class PokemonCard extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 9),
             //..._buildTypes(),
           ],
         ),
