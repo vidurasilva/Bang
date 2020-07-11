@@ -86,14 +86,14 @@ class PokeCategoryCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15)),
               padding: EdgeInsets.all(0),
               color: category.color,
-              splashColor: Colors.white12,
-              highlightColor: Colors.white12,
+              splashColor: Colors.white10,
+              highlightColor: Colors.white10,
               elevation: 0,
               highlightElevation: 2,
               disabledColor: category.color,
               onPressed: onPress,
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(16),
+                borderRadius: BorderRadius.circular(15),
                 child: Stack(
                   children: [
                     _buildCardContent(),
