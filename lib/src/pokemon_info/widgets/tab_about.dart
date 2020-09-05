@@ -14,8 +14,8 @@ class PokemonAbout extends StatelessWidget {
               TextStyle(fontSize: 16, height: 0.8, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: 22),
-        if (child != null) child,
-        if (children != null) ...children
+        // if (child != null) child,
+        // if (children != null) ...children
       ],
     );
   }
