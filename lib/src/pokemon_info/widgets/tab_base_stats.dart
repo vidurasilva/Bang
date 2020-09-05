@@ -105,7 +105,7 @@ class _PokemonBaseStatsState extends State<PokemonBaseStats>
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
-            ..._stats.expand((stat) => [stat, SizedBox(height: 14)]),
+            // ..._stats.expand((stat) => [stat, SizedBox(height: 14)]),
             SizedBox(height: 27),
             Text(
               "Type defenses",
